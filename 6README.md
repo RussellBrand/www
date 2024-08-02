@@ -27,5 +27,6 @@ https://fullstackopen.com/en/part6/flux_architecture_and_redux
 ~/xall/programming/ufin/part6/redux-anecdotes
 ## [x] 6.3
 ## [Y] 6.4 -- add new note -- but not with automated test of react
-## [y] 6/5 -- sort
-
+## [y] 6.5 -- sort
+## [Y] 6.6 -- action creators
+https://fullstackopen.com/en/part6/flux_architecture_and_redux#action-creators

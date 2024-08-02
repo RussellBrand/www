@@ -2,27 +2,23 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { getId } from "./reducers/anecdoteReducer";
 
+import { createNoteAction, createVoteAction } from "./reducers/anecdoteReducer";
+
 const App = () => {
   const anecdotes = useSelector((state) => state);
   const dispatch = useDispatch();
 
   const vote = (id) => {
-    console.log("vote", id);
-    dispatch({
-      type: "VOTE",
-      payload: { id },
-    }); // dispatching an action to the store
+    // console.log("vote", id);
+    dispatch(createVoteAction(id));
   };
 
   const createNew = (e) => {
-    console.log(e);
+    // console.log(e);
     e.preventDefault();
     const content = e.target["type-into-anecdote"].value;
     e.target["type-into-anecdote"].value = "";
-    dispatch({
-      type: "NEW",
-      payload: { content, id: getId(), votes: 0 },
-    });
+    dispatch(createNoteAction(content));
   };
 
   return (
