@@ -1,18 +1,10 @@
-import { useSelector, useDispatch } from "react-redux";
+//import { useSelector, useDispatch } from "react-redux";
 
-import { getId } from "./reducers/anecdoteReducer";
+import { createNoteAction } from "./reducers/anecdoteReducer";
 
-import { createNoteAction, createVoteAction } from "./reducers/anecdoteReducer";
+import Alist from "./components/Alist";
 
 const App = () => {
-  const anecdotes = useSelector((state) => state);
-  const dispatch = useDispatch();
-
-  const vote = (id) => {
-    // console.log("vote", id);
-    dispatch(createVoteAction(id));
-  };
-
   const createNew = (e) => {
     // console.log(e);
     e.preventDefault();
@@ -23,18 +15,7 @@ const App = () => {
 
   return (
     <div>
-      <h2>Anecdotes</h2>
-      <div id="anecdotes">
-        {anecdotes.map((anecdote) => (
-          <div class="an-anecdote" key={anecdote.id}>
-            <div>{anecdote.content}</div>
-            <div>
-              has <span class="vote-count">{anecdote.votes}</span>
-              <button onClick={() => vote(anecdote.id)}>vote</button>
-            </div>
-          </div>
-        ))}
-      </div>
+      <Alist></Alist>
       <h2>create new</h2>
 
       <form
