@@ -1,5 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 
+import { getId } from "./reducers/anecdoteReducer";
+
 const App = () => {
   const anecdotes = useSelector((state) => state);
   const dispatch = useDispatch();
@@ -10,6 +12,17 @@ const App = () => {
       type: "VOTE",
       payload: { id },
     }); // dispatching an action to the store
+  };
+
+  const createNew = (e) => {
+    console.log(e);
+    e.preventDefault();
+    const content = e.target["type-into-anecdote"].value;
+    e.target["type-into-anecdote"].value = "";
+    dispatch({
+      type: "NEW",
+      payload: { content, id: getId(), votes: 0 },
+    });
   };
 
   return (
@@ -27,11 +40,20 @@ const App = () => {
         ))}
       </div>
       <h2>create new</h2>
-      <form>
+
+      <form
+        id="the-form"
+        onSubmit={(event) => {
+          createNew(event);
+          event.preventDefault();
+        }}
+      >
         <div>
-          <input />
+          <input id="type-into-anecdote" />
         </div>
-        <button>create</button>
+        <button id="create-anecdote" type="submit">
+          create
+        </button>
       </form>
     </div>
   );

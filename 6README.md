@@ -26,4 +26,4 @@ https://fullstackopen.com/en/part6/flux_architecture_and_redux
 ## second exercises
 ~/xall/programming/ufin/part6/redux-anecdotes
 ## [x] 6.3
-## [ ] 6.4 -- add new note
+## [Y] 6.4 -- add new note -- but not with automated test of react
