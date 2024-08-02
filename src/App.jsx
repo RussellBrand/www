@@ -6,6 +6,10 @@ const App = () => {
 
   const vote = (id) => {
     console.log("vote", id);
+    dispatch({
+      type: "VOTE",
+      payload: { id },
+    }); // dispatching an action to the store
   };
 
   return (
@@ -16,7 +20,7 @@ const App = () => {
           <div class="an-anecdote" key={anecdote.id}>
             <div>{anecdote.content}</div>
             <div>
-              has {anecdote.votes}
+              has <span class="vote-count">{anecdote.votes}</span>
               <button onClick={() => vote(anecdote.id)}>vote</button>
             </div>
           </div>

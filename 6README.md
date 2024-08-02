@@ -25,5 +25,5 @@ https://fullstackopen.com/en/part6/flux_architecture_and_redux
 ### [x] 6.2
 ## second exercises
 ~/xall/programming/ufin/part6/redux-anecdotes
-## [ ] null action leaves state unchange
-## [ ] null action leaves state unchange
+## [x] 6.3
+## [ ] 6.4 -- add new note
