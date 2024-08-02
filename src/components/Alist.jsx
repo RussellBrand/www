@@ -15,10 +15,10 @@ const Alist = () => {
       <h2>Anecdotes</h2>
       <div id="anecdotes">
         {anecdotes.map((anecdote) => (
-          <div class="an-anecdote" key={anecdote.id}>
+          <div className="an-anecdote" key={anecdote.id}>
             <div>{anecdote.content}</div>
             <div>
-              has <span class="vote-count">{anecdote.votes}</span>
+              has <span className="vote-count">{anecdote.votes}</span>
               <button onClick={() => vote(anecdote.id)}>vote</button>
             </div>
           </div>

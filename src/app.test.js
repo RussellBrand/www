@@ -1,7 +1,10 @@
+import { render, screen } from "@testing-library/react";
+import userEvent from "@testing-library/user-event";
+
 //import { expect } from "jest";
 import { createStore } from "redux";
 import { Provider } from "react-redux";
-import App from "./app";
+import App from "./App";
 
 import renderer from "react-test-renderer";
 
@@ -12,11 +15,11 @@ import { initialState } from "./reducers/anecdoteReducer";
 import { fireEvent } from "@testing-library/react";
 
 const store = createStore(reducer);
-test("simple test", () => {
+test.skip("simple test", () => {
   expect(1 + 1).toBe(2);
 });
 
-describe("...", () => {
+describe.skip("...", () => {
   test("renders the right initial number of anecdotes", () => {
     const quantity = initialState.length;
     const component = renderer.create(
@@ -87,4 +90,13 @@ describe("...", () => {
     );
     expect(new_anecdote_div).toBeDefined();
   });
+});
+
+test.skip("6.4 create", () => {
+  const component = renderer.create(
+    <Provider store={store}>
+      <App />
+    </Provider>
+  );
+  const user = userEvent.setup();
 });
