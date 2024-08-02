@@ -30,7 +30,7 @@ https://fullstackopen.com/en/part6/flux_architecture_and_redux
 ## [y] 6.5 -- sort
 ## [Y] 6.6 -- action creators
 https://fullstackopen.com/en/part6/flux_architecture_and_redux#action-creators
-## [ ] 6.7 -- ancedote form -> seperate file 
+## [Y] 6.7 -- ancedote form -> seperate file 
 ## [Y] 6.8 -- ancedote list -> seperate file 
 ## [ ] go  back and add gest tests to 6.4
 
